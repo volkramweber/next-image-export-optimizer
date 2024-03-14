@@ -28,15 +28,6 @@ jobs:
       - run: cd example/ && npm ci && cd ..
       - run: npm run build
       - run: npm pack
-      - name: Upload
-        uses: actions/upload-artifact@v3
-        with:
-         name: next-image-export-optimizer-${{ github.ref_name }}.tgz
-         path: '*.tgz'
-  create-release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -47,7 +38,6 @@ jobs:
           release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
-
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
