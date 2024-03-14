@@ -28,6 +28,11 @@ jobs:
       - run: cd example/ && npm ci && cd ..
       - run: npm run build
       - run: npm pack
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+         name: package
+         path: next-image-export-optimizer-${{ github.ref_name }}.tgz
   create-release:
     needs: build
     runs-on: ubuntu-latest
