@@ -31,8 +31,8 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-         name: package
-         path: next-image-export-optimizer-${{ github.ref_name }}.tgz
+         name: next-image-export-optimizer-${{ github.ref_name }}
+         path: '*.tgz'
   create-release:
     needs: build
     runs-on: ubuntu-latest
