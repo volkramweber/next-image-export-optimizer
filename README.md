@@ -1,6 +1,6 @@
 # Next-Image-Export-Optimizer
 
-[![npm](https://img.shields.io/npm/v/next-image-export-optimizer)](https://www.npmjs.com/package/next-image-export-optimizer)
+This fork removes special handling for jpeg vs. jpg mime type because of some follow up errors.
 
 Use [Next.js advanced **\<Image/>** component](https://nextjs.org/docs/basic-features/image-optimization) with the static export functionality. Optimizes all static images in an additional step after the Next.js static export.
 
