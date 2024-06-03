@@ -47,7 +47,8 @@ async function downloadImage(url: string, filename: string, folder: string) {
       }
 
       // Check if filename already has an extension that matches the image format
-      const regex = new RegExp(`.${imageFormat}$`, "i");
+      //const regex = new RegExp(`.${imageFormat}$`, "i");
+      const regex = new RegExp(`.${["jpg", "jpeg"].includes(imageFormat?.toLowerCase()) ? "jpe?g" : imageFormat}$`, "i");
       const hasMatchingExtension = regex.test(filename);
 
       // Add appropriate extension to filename based on image format
